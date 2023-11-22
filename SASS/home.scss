@@ -1,0 +1,549 @@
+@import "./main";
+@import "./Component/header";
+@import "./Component/variable";
+
+body {
+    background: #F0EEF0;
+
+    header {
+        background-image: url(https://animalmedicinesaustralia.org.au/wp-content/uploads/2022/11/Pet-report-2022-website-image-cropped-2-1120x630.jpg);
+        background-position: center;
+    }
+
+    .category {
+        padding: 30px $standard-padding;
+
+        h3,
+        h2 {
+            font-family: $main-font-header;
+        }
+
+        .pet {
+            padding-top: 60px;
+
+            .title {
+                font-size: 20px;
+                padding: 0 15px;
+                border-left: 5px solid $main-bg-color;
+
+                h4 {
+                    text-decoration: underline;
+                    color: $main-text-color;
+                }
+            }
+
+            .card_container {
+                @include flexeEvenly;
+                padding-bottom: 30px;
+                padding-top: 30px;
+
+                .card {
+                    @include flexDirection;
+                    height: 380px;
+                    padding: 25px;
+                    width: 23%;
+                    border: 1px solid $main-card-border;
+                    border-radius: 15px;
+                    background-color: #fff;
+                    background: #000000;
+                    animation: mymove 6s infinite linear;
+
+                    &:nth-child(2) .pet-img {
+                        background-image: url(../IMAGES/home-page/cat.jpg);
+                    }
+
+                    &:nth-child(3) .pet-img {
+                        background-image: url(../IMAGES/home-page/bird.jpg);
+                    }
+
+                    &:nth-child(4) .pet-img {
+                        background-image: url(../IMAGES/home-page/rabbit.png);
+                    }
+
+                    .pet-img {
+                        display: flex;
+                        height: 45%;
+                        width: 100%;
+                        background-image: url(../IMAGES/home-page/dog.png);
+                        @include backgroundImage;
+                        background-position: center;
+                        border-radius: 15px;
+                    }
+
+                    .pet-content {
+                        padding-top: 20px;
+                        height: 55%;
+                        font-size: 15px;
+                        gap: 15px;
+                        color: white;
+                        @include flexDirection;
+
+                        .Btn {
+                            padding-top: 20px;
+
+                            button {
+                                @include flexCenter;
+                                color: white;
+                                background-color: $main-text-color;
+                                cursor: pointer;
+                                transition: 0.3s;
+                            }
+
+                            button:hover {
+                                background: black;
+                                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                            }
+                        }
+
+                        ul {
+                            display: flex;
+                            width: 100%;
+                            justify-content: space-between;
+                            flex-wrap: wrap;
+                            gap: 15%;
+                        }
+                    }
+                }
+
+                @include responsive("laptop") {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+
+                    .card {
+                        width: 48%;
+                        display: flex;
+
+                        .pet-img {
+                            flex: 3;
+                        }
+
+                        .pet-content {
+                            flex: 1;
+                        }
+                    }
+                }
+
+                @include responsive("tablet") {
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    .card {
+                        width: 47%;
+                    }
+                }
+
+              @include responsive("phone"){
+                display: flex;
+                padding: 30px 0px;
+                .card{
+                    width: 100%;
+                }
+               
+              }
+
+            }
+
+        }
+
+        @keyframes mymove {
+            0% {
+                background: #000000;
+            }
+
+            20% {
+                background: #190031;
+            }
+
+            40% {
+                background: #00253f;
+            }
+
+            60% {
+                background: #00323f;
+            }
+
+            80% {
+                background: #011e33;
+            }
+
+            100% {
+                background: #000000;
+            }
+        }
+
+        .product {
+            padding-bottom: 30px;
+            padding-top: 60px;
+
+            .title {
+                font-size: 20px;
+                padding: 0 15px;
+                border-left: 5px solid $main-bg-color;
+
+                h4 {
+                    text-decoration: underline;
+                    color: $main-text-color;
+                }
+            }
+
+            .group-card {
+                @include flexeEvenly;
+                gap: 20px;
+                padding-top: 30px;
+
+                .card {
+                    @include flexDirection;
+                    height: 400px;
+                    width: 100%;
+                    border: 1px solid $main-card-border;
+                    border-radius: 15px;
+                    background: #000000;
+                    animation: mymove 6s infinite linear;
+                    padding: 30px;
+                    gap: 25px;
+
+                    &:nth-child(2) .product-img {
+                        background-image: url(/IMAGES/home-page/feed-pro.jpg);
+                    }
+
+                    &:nth-child(1) .product-img {
+                        background-image: url(/IMAGES/home-page/compjpg.jpg);
+                    }
+
+                    &:nth-child(3) .product-img {
+                        background-image: url(/IMAGES/home-page/sarang-pro.jpg);
+                    }
+
+                    .product-img {
+                        flex: 1;
+                        background-image: url(/IMAGES/home-page/pro-cat.jpg);
+                        background-size: cover;
+                        border-radius: 15px;
+                    }
+
+                    .product-content {
+                        flex: 1;
+                        @include flexDirection;
+                        justify-content: space-between;
+
+                        p {
+                            text-align: start;
+                            color: white;
+                        }
+
+                        .more {
+                            display: flex;
+                            justify-content: space-between;
+
+                            .price {
+                                color: $main-bg-color;
+                            }
+                        }
+                    }
+                }
+
+                @include responsive("laptop") {
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    .card {
+                        width: 48%;
+                        display: flex;
+
+                        .product-img {
+                            flex: 3;
+                        }
+
+                        .product-content {
+                            flex: 1;
+                        }
+                    }
+                }
+
+                @include responsive("tablet"){
+                    display: flex;
+                    flex-wrap: wrap;
+                    .card{
+                        width: 47%;
+                    }
+                }
+
+                @include responsive("phone"){
+                    display: flex;
+                    .card{
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+        @include responsive("tablet") {
+            padding: 30px 50px;
+        }
+    }
+
+    // new-product
+    .our-new-product {
+        padding: 30px $standard-padding;
+
+        .title {
+            font-size: 20px;
+            padding: 0 15px;
+            border-left: 5px solid $main-bg-color;
+
+            h4 {
+                text-decoration: underline;
+                color: $main-text-color;
+            }
+        }
+
+        .class-card {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+            padding-top: 30px;
+
+            .card {
+                padding: 30px;
+                height: 380px;
+                gap: 25px;
+                @include flexDirection;
+                border: 1px solid $main-card-border;
+                border-radius: 15px;
+                background-color: #fff;
+
+                &:nth-child(2) .new-img {
+                    background-image: url(/IMAGES/home-page/cat-new.jpg);
+                }
+
+                &:nth-child(3) .new-img {
+                    background-image: url(/IMAGES/home-page/new-pro.png);
+                }
+
+                &:nth-child(4) .new-img {
+                    background-image: url(/IMAGES/home-page/sukina.jpg);
+                }
+
+                &:nth-child(5) .new-img {
+                    background-image: url(/IMAGES/home-page/little-dog.png);
+                }
+
+                &:nth-child(6) .new-img {
+                    background-image: url(/IMAGES/home-page/big\ cat.png);
+                }
+
+                &:nth-child(7) .new-img {
+                    background-image: url(/IMAGES/home-page/big-rabbit.jpg);
+                }
+
+                &:nth-child(8) .new-img {
+                    background-image: url(/IMAGES/home-page/red-bird.jpg);
+                }
+
+                .new-img {
+                    flex: 1;
+                    display: flex;
+                    background-image: url(/IMAGES/home-page/doll.jpg);
+                    background-size: cover;
+                    border-radius: 15px;
+                }
+
+                .new-content {
+                    @include flexDirection;
+                    justify-content: space-between;
+                    flex: 1;
+
+                    .more {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .price {
+                            color: $main-bg-color;
+                        }
+
+                        .tag {
+                            color: $main-text-color;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            @include responsive("laptop") {
+                display: flex;
+                flex-wrap: wrap;
+
+                .card {
+                    width: 48%;
+
+                    .new-img {
+                        flex: 4;
+                    }
+
+                    .new-content {
+                        flex: 1;
+                    }
+                }
+            }
+
+            @include responsive("tablet"){
+                display: flex;
+                flex-wrap: wrap;
+                .card{
+                    width: 47%;
+                }
+            }
+
+            @include responsive("phone"){
+                display: flex;
+                .card{
+                    width: 100%;
+                }
+            }
+        }
+        @include responsive("tablet") {
+            padding: 30px 50px;
+        }
+    }
+
+    // selling-product
+    .top-sell-product {
+        padding-top: 70px;
+        @include flexDirection;
+        gap: 30px;
+        .feed-content {
+            padding: 15px;
+            border-left: 5px solid $main-bg-color;
+            h4 {
+                font-size: 20px;
+            }
+            h2 {
+                font-size: 30px;
+            }
+        }
+        .group-feed {
+            background-color: $main-background;
+            display: grid;
+            grid-template: 90% 10% / repeat(3, 1fr);
+            gap: 20px;
+            padding: 50px 0px;
+            .card {
+                position: relative;
+                height: 350px;
+                @include flexDirection;
+                border: none;
+                align-items: center;
+                background-color: #000;
+                cursor: pointer;
+                transition: ease 0.3s;
+                padding: 30px;
+                .card-image {
+                    border-radius: 10px;
+                    z-index: 1;
+                    position: absolute;
+                    top: -20px;
+                    border: 1px solid $main-background;
+                    background-image: url(../IMAGES/service_page/dog\ feed.jpg);
+                    @include backgroundImage;
+                    background-position: center top;
+                    height: 45%;
+                    width: 90%;
+                }
+
+                .card-content {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: 55%;
+                    padding: 30px;
+                    @include flexDirection;
+                    justify-content: space-between;
+
+                    .content {
+                        @include flexDirection;
+                        gap: 10px;
+
+                        p {
+                            font-weight: 300;
+                        }
+                    }
+
+                    .price {
+                        width: 100%;
+                        @include flexBtween;
+                        align-items: flex-end;
+                        a {
+                            button {
+                                background-color: #000;
+                                border: 1px solid #fff;
+                                transition: ease 0.3s;
+                                color: white;
+                                &:hover {
+                                    box-shadow: #0d9affa4 0px 20px 80px;
+                                }
+                                &:active {
+                                    background: #252525;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    box-shadow: #616161 0px 2px 4px 0px, #616161 0px 2px 16px 0px;
+                }
+            }
+
+            .card:nth-child(1) .card-image {
+                background-image: url(../IMAGES/home-page/Allergy-Aid.jpg);
+            }
+
+            .card:nth-child(2) .card-image {
+                background-image: url(../IMAGES/service_page/dogs\ feed.jpg);
+            }
+
+            .card:nth-child(3) .card-image {
+                background-image: url(../IMAGES/service_page/cat\ feeds.jpg);
+            }
+
+            a {
+                grid-column: 1/4;
+                display: flex;
+                justify-content: center;
+                button{
+                    background: black;
+                    color: white;
+                    cursor: pointer;
+                    transition: 0.5s;
+                    &:hover{
+                        background: $main-text-color;
+                        color: black;
+                    }
+                }
+            }
+        }
+        @include responsive("middle"){
+            .group-feed{
+                gap: 50px;
+                padding: 30px 100px;
+                grid-template: 1fr 1fr 1fr 30px / 1fr;
+                a {
+                    grid-row: 4/5;
+                    grid-column: 1/2;
+                }
+            }
+        }
+        @include responsive("tablet") {
+            .group-feed{
+                padding: 30px 50px;
+            }
+        }
+        @include responsive("phone"){
+            .group-feed{
+                padding: 30px 0px;
+            }
+        }
+    }
+}

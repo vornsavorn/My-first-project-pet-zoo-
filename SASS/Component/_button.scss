@@ -1,0 +1,6 @@
+@import "../Group-Mixin/Flex-Mixin";
+button {
+    @include btnStyle;
+    font-size: 16px;
+    @include flexCenter;
+}

@@ -1,0 +1,13 @@
+@mixin gridCenter {
+    display: grid;
+    align-items: center;
+}
+@mixin Two {
+    grid-template-columns: repeat(2, 1fr);
+}
+@mixin Three {
+    grid-template-rows: repeat(3, 1fr);
+}
+@mixin Four {
+    grid-template-columns: repeat(4, 1fr);
+}

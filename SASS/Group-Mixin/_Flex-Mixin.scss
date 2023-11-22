@@ -1,0 +1,58 @@
+@import "../Component/variable";
+@mixin Universal {
+    font-family: $main-font;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    text-decoration: none;
+    list-style-type: none;
+    scroll-behavior: smooth;
+    line-height: 1.5em;
+}
+
+@mixin flexDirection {
+    display: flex;
+    flex-direction: column;
+}
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+}
+@mixin flexeEvenly {
+    @include flexCenter;
+    justify-content: space-evenly;
+}
+@mixin flexEnd {
+    display: flex;
+    justify-content: flex-end;
+} 
+@mixin flexBtween {
+    display: flex;
+    align-items: center;justify-content: space-between;
+}
+@mixin inputStyle {
+    border-radius: 25px;
+    border: 1px solid gray;
+    font-size: 17px;
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    outline-color: rgb(181, 181, 181);
+}
+@mixin backgroundImage {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+@mixin btnStyle {
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+@mixin absolutePosition {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
